@@ -127,7 +127,7 @@ td em{
   color: #ecf0f1;
 }
 .navbar-inverse .navbar-nav > li > a {
-  color: #ecf0f1;
+  color: #ffffff !important;
 }
 .navbar-inverse .navbar-nav > li > a:hover,
 .navbar-inverse .navbar-nav > li > a:focus {

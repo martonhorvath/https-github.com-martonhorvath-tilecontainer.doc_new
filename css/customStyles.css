@@ -143,16 +143,16 @@ td em{
 .navbar-inverse .navbar-nav > li > .dropdown-menu > li > a:hover,
 .navbar-inverse .navbar-nav > li > .dropdown-menu > li > a:focus {
   color: #ffffff;
-  background-color: #005696;
+  background-color: #00b4f0 !important;
 }
 .navbar-inverse .navbar-nav > li > .dropdown-menu > li > .divider {
-  background-color: #005696;
+  background-color: #00b4f0 !important;
 }
 .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a,
 .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:hover,
 .navbar-inverse .navbar-nav .open .dropdown-menu > .active > a:focus {
   color: #ffffff;
-  background-color: #005696;
+  background-color: #00b4f0 !important;
 
 }
 .navbar-inverse .navbar-nav > .active > a,

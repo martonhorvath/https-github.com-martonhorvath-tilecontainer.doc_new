@@ -2,7 +2,7 @@
 <html lang="en-us">
   <head>
     <meta charset="UTF-8">
-    <title>Cayman</title>
+    <title>TileContainer Documentation</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#157878">
     <link rel="stylesheet" href="css/normalize.css">
@@ -10,7 +10,38 @@
     <link rel="stylesheet" href="css/cayman.css">
   </head>
   <body>
-    <section class="page-header">
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+  	  <div class="container-fluid">
+  	    <div class="navbar-header">
+  	    	<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+  	            <span class="icon-bar"></span>
+  	            <span class="icon-bar"></span>
+  	            <span class="icon-bar"></span>                        
+  	      </button>
+  	      <a class="navbar-brand" href="#home" id="toTopButton">Convista</a>
+  	    </div>
+  	    <div class="collapse navbar-collapse" id="myNavbar">
+  	    	<ul class="nav navbar-nav">
+		        <li><a href="#main-content">Introduction</a></li>
+		        <li><a href="#prerequisites">Prerequisites</a></li>
+		        <li><a href="#yql">Yahoo Query Language</a></li>
+		        <li class="dropdown">
+		        	<a href="#" class="dropdown-toggle" data-toggle="dropdown">Configuration <span class="caret"></span></a>
+		        		<ul class="dropdown-menu">
+		        			<li ><a href="#configuration_examples">Configuration Examples</a></li>
+		        			<li ><a href="#simple_stock_rate_display">Simple stock rate display</a></li>
+		        			<li ><a href="#complex_binding">More complex binding</a></li>
+		        			<li ><a href="#two_by_one_configuration">TwoByOne configuration</a></li>
+		        		</ul>
+		        </li>
+		        <li><a href="#formatter_functions">Formatter Functions</a></li>
+				<li><a href="#styling">Styling</a></li>
+		        <li><a href="#installation">Installation</a></li>
+		      </ul>
+  	    </div>
+  	  </div>
+  	</nav>
+    <section class="pageoriginal-header">
       <h1 class="project-name">Cayman</h1>
       <h2 class="project-tagline">A responsive theme for your project on GitHub Pages</h2>
       <a href="#" class="btn">View on GitHub</a>
@@ -304,6 +335,53 @@
       </footer>
 
     </section>
+<script type="text/javascript">
+  	$("#toTopButton").on("click", function(e){
+  		e.preventDefault();
+  		var hash = "#home"
 
+  		$('html, body').animate({
+  		    scrollTop: 0
+  		  }, '1000', function(){
+  		    window.location.hash = hash;
+  		  });
+
+  	})
+
+
+  	$("#myNavbar ul li a[href^='#']").on('click', function(e) {
+
+  		if($(e.target).attr("class") !== "dropdown-toggle"){
+  			// prevent default anchor click behavior
+  			e.preventDefault();
+
+  			// store hash
+  			var hash = this.hash;
+  			var offset = 50;
+  			// animate
+  			$('html, body').animate({
+  			    scrollTop: $(hash).offset().top - offset + 'px'
+  			  }, 1000, function(){
+
+  			    // when done, add hash to url
+  			    // (default click behaviour)
+  			    window.location.hash = hash;
+  			  });
+  		}
+  	   
+
+  	});
+
+  	$(document).on('click', '[data-toggle="lightbox"]', function(event) {
+  	    event.preventDefault();
+  	    $(this).ekkoLightbox();
+  	});
+
+  	 $(document).on('click.nav','.navbar-collapse.in',function(e) {
+  	    if( $(e.target).is('a') ) {
+  	        $(this).removeClass('in').addClass('collapse');
+  	    }
+  	});
+  </script>
   </body>
 </html>
